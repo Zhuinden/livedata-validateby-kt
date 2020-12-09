@@ -2,8 +2,6 @@
 
 LiveData-ValidateBy-KT contains helper functions for LiveData, to combine multiple LiveDatas that hold booleans into a single emitted boolean.
 
-Under the hood, it uses LiveData-CombineTuple-KT to help provide combiners from 2 to 16 arity.
-
 ``` kotlin
 validateBy(liveDataBoolean1, liveDataBoolean2, liveDataBoolean3)
     .observe(lifecycleOwner) { isEnabled ->
@@ -48,14 +46,14 @@ and then, add the dependency to your module's `build.gradle.kts` (or `build.grad
 
 ``` kotlin
 // build.gradle.kts
-implementation("com.github.Zhuinden:livedata-validateby-kt:1.0.0")
+implementation("com.github.Zhuinden:livedata-validateby-kt:2.0.0")
 ```
 
 or
 
 ``` groovy
 // build.gradle
-implementation 'com.github.Zhuinden:livedata-validateby-kt:1.0.0'
+implementation 'com.github.Zhuinden:livedata-validateby-kt:2.0.0'
 ```
 
 ## License

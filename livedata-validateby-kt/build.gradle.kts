@@ -41,6 +41,7 @@ dependencies {
     testImplementation("junit:junit:4.12")
     testImplementation("org.assertj:assertj-core:3.9.1")
     testImplementation("org.mockito:mockito-core:2.15.0")
+    testImplementation("androidx.arch.core:core-testing:2.0.0")
     androidTestImplementation("junit:junit:4.12")
 }
 
