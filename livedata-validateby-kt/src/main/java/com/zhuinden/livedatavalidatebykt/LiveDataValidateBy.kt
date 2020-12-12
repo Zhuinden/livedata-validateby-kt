@@ -17,15 +17,12 @@ package com.zhuinden.livedatavalidatebykt
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.Transformations
-import com.zhuinden.livedatacombinetuplekt.combineTuple
 
 fun validateBy(vararg liveDatas: LiveData<Boolean>): LiveData<Boolean> = MediatorLiveData<Boolean>().also { mediator ->
     mediator.value = liveDatas.all { it.value == true }
 
     for (current in liveDatas) {
-        mediator.addSource(current, Observer { valid ->
+        mediator.addSource(current) { valid ->
             var isValid = valid
             if (isValid) {
                 for (liveData in liveDatas) {
@@ -39,6 +36,6 @@ fun validateBy(vararg liveDatas: LiveData<Boolean>): LiveData<Boolean> = Mediato
             }
 
             mediator.value = isValid
-        })
+        }
     }
 }
